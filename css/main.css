@@ -1,0 +1,557 @@
+html, body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    background-color: #FAFAFA;
+    --c-brand: #0000EF;
+    --c-light-gray: #F5F5F5;
+    --c-dark-gray: #222222;
+    
+}
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 0;
+    z-index: 4;
+    pointer-events: none;
+    transition: all 0.2s;
+}
+#overlay.is-showing {
+    opacity: 0.5;
+    pointer-events: all;
+}
+main {
+    overflow-x: hidden;
+}
+h1, h2, h3, h4 {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+h1 {
+    font-size: 3.5rem;
+}
+h2 {
+    margin-bottom: 1rem;
+}
+h4 {
+    font-size: 1.125rem;
+}
+p.text-bigger {
+    font-size: 1.125rem;
+}
+button {
+    background-color: inherit;
+    border: 0;
+    cursor: pointer;
+}
+.button {
+    padding: 0.75rem 2rem;
+    border-radius: 20px 4px 20px 4px;
+    transition: all 0.3s;
+}
+.button a {
+    color: inherit;
+    transition: all 0.3s;
+}
+.button a:hover {
+    text-decoration: none;
+}
+.button.button--main {
+    font-weight: bold;
+    background-color: #0066FF;
+    color: white;
+    font-size: 1.125rem;
+}
+.button.button--main:hover {
+    background-color: rgb(34, 125, 243);
+    transform: scale(1.03) translateY(-3px);
+}
+.button.button--outline {
+    border: 1px solid black;
+}
+.button.button--outline:hover {
+    background-color: white;
+    border: 1px solid white;
+}
+.button.button--secondary {
+    background: var(--c-dark-gray);
+    color: white;
+}
+.button.button--secondary:hover {
+    background: var(--c-dark-gray);
+}
+.bg-light-gray {
+    background-color: var(--c-light-gray);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+.hero .button.button--outline {
+    border: 1px solid white;
+    color: white;
+}
+.hero .button.button--outline:hover a {
+    color: black;
+}
+
+.hero .container {
+    padding-top: 300px;
+}
+section {
+    padding: 4rem 0;
+}
+@media only screen and (max-width: 997px) {
+    html, body {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+}
+@media only screen and (max-width: 767px) {
+    
+}
+
+
+/* end global styles */
+.scroll-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    animation: scroll-down 1s 1.2s forwards;
+    display: none;
+}
+.scroll-btn img {
+    animation: float 6s 2.5s ease-in-out infinite;
+}
+@keyframes scroll-down {
+	0% {
+        bottom: 70px;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+	100% {
+        opacity: 1;
+		bottom: 30px;
+	}
+}
+.hero {
+    background-image: url("../assets/images/bulbs.jpg");
+    width: 100%;
+    background-position: center 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    color: white;
+    min-height: 420px;
+    position: relative;
+}
+.hero h1 {
+    max-width: 900px;
+}
+.hero ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.hero .container {
+    padding-top: 23vh;
+}
+.cta-mobile {
+    display: none;
+}
+.introduction {
+    
+    min-height: 300px;
+    font-size: 1.125rem;
+}
+.introduction .container {
+    max-width: 700px;
+}
+@media only screen and (max-width: 762px) {
+    .hero.hero--home {
+        height: 667px;
+    }
+    .hero .container {
+        padding-top: 150px;
+    }
+    .cta-mobile {
+        display: block;
+    }
+    .cta-desktop {
+        display: none;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .hero .container {
+        max-width: 460px;
+    }
+    .hero {
+        background-attachment: fixed;
+    }
+    .scroll-btn {
+        display: block;
+    }
+    
+}
+.services {
+    background-image: url("../assets/images/bulbs.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center 60%;
+}
+.service {
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 3px solid #7498F5;
+    border-radius: 8px;
+    padding: 30px 0;
+    max-width: 250px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.87);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 30px;
+    height: 163px;
+    transition: all 0.5s;
+}
+.service:hover {
+    transform: translateY(-10px) !important;
+    background-color: rgba(255, 255, 255, 1);
+}
+.services img {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.feature {
+    transition: all 0.5s;
+}
+.feature:hover {
+    transform: scale(1.05);
+}
+.features .container {
+    max-width: 1300px;
+}
+.features .one {
+    margin-left: 15%;
+}
+.features .two {
+    margin-left: 7%;
+}
+
+.features .header {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.features .center {
+    text-align: center;
+}
+.features .right {
+    margin-top: 200px;
+}
+.features .phone {
+    width: 140%;
+    margin: auto;
+    margin-left: -15%;
+    max-height: 500px;
+    object-fit: contain;
+    animation: float 6s ease-in-out infinite;
+}
+
+
+@keyframes float {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-20px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+.feature {
+    display: flex;
+}
+.feature img {
+    margin-bottom: auto;
+    margin-right: 1rem;
+}
+@media only screen and (max-width: 920px) {
+    .features .right {
+        margin-top: 0;
+    }
+    .features .one {
+        margin-left: 10%;
+    }
+    .features .two {
+        margin-left: 5%;
+    }
+}
+.work img {
+    transition: all 0.5s;
+}
+.work img:hover {
+    transform: translateY(-15px);
+}
+.work img {
+    width: 100%;
+}
+#references .link {
+    font-weight: bold;
+}
+#references {
+    background-color: #141414;
+    color: white;
+}
+#references .container {
+    max-width: 1800px;
+}
+#testimonials {
+    text-align: center;
+}
+#testimonials .quote {
+    max-width: 630px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    font-style: italic;
+}
+#testimonials .quote::before {
+    background-image: url("../assets/svg/quote.svg");
+    background-repeat: no-repeat;
+    content: "";
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    left: -70px;
+    top: -10px;
+    opacity: 0.2;
+}
+
+#contact {
+    padding-top: 8.5rem;
+    padding-bottom: 16rem;
+    text-align: center;
+    color: white;
+    background-image: url("../assets/images/bulbs.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center 60%;
+}
+
+#contact .icon {
+    height: 24px;
+    margin-right: 8px;
+}
+#contact hr {
+    border-bottom: 1px solid white;
+    max-width: 300px;
+    opacity: 0.3;
+}
+#contact p {
+    margin-bottom: 0.5rem;
+}
+#contact p.big {
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+/* footer */
+footer {
+    height: 70px;
+    color: white;
+    position: relative;
+    width: 100%;
+    font-weight: bold;
+}
+footer .inner {
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    z-index: 3;
+    background: #111111;
+}
+footer .container {
+    margin-top: 25px;
+}
+
+
+/* navbar */
+.contact-strip {
+    padding: 0.25rem 0;
+    background: #f5f5f5;
+    display: none;
+}
+.contact-strip.is-hidden {
+    display: none;
+}
+.navbar {
+    height: 70px;
+    background: rgb(12, 12, 12);
+    z-index: 5;
+    width: 100%;
+    transition: all 0.4s;
+    color: #ffffff;
+    position: fixed;
+}
+.navbar .container {
+    max-width: 100%;
+}
+.navbar.is-scrolling-down {
+    /* top: -79px;
+    opacity: 0; */
+}
+
+.navbar.is-scrolling-up {
+    /* top: 0;
+    opacity: 1; */
+}
+
+.navbar__logo {
+    font-size: 1.125rem;
+    text-align: left;
+    font-weight: bold;
+    color: white;
+}
+a.navbar__logo:hover {
+    text-decoration: none;
+    color: inherit;
+}
+.navbar__logo img {
+    height: 30px;
+}
+
+.navbar ul {
+    margin: 0 0 0 auto;
+    list-style-type: none;
+}
+
+.navbar ul>li {
+    display: inline-block;
+    margin-left: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+.navbar ul>li>a {
+    color: rgb(255, 255, 255);
+    transition: all 0.2s;
+}
+.navbar ul>li>a:hover {
+    text-decoration: none;
+}
+.navbar ul>li>a:hover {
+    color: rgba(255, 255, 255, 0.753);
+}
+
+/* mobile */
+
+.navbar-mobile {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    text-align: right;
+    background: rgb(12, 12, 12);
+}
+
+.navbar-mobile.is-scrolling {
+    top: 0;
+}
+
+.navbar-mobile .container {
+    display: flex;
+    align-items: center;
+    height: 52px;
+    max-width: 100%;
+}
+.navbar-mobile ul {
+    padding-left: 0;
+}
+.navbar-mobile ul li {
+    cursor: pointer;
+    padding: 1rem 20px 1rem 0.5rem;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(255, 255, 255, 0.048);
+}
+.navbar-mobile ul li a {
+    color: rgb(255, 255, 255);
+}
+
+.navbar-mobile ul li a:hover {
+    color: #777;
+    text-decoration: none;
+}
+
+.navbar-mobile ul {
+    width: 60vw;
+    background: rgb(12, 12, 12);
+    list-style-type: none;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    right: -100vw;
+    transition: all 0.2s;
+
+}
+
+.navbar-mobile.is-showing ul {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* hamburger */
+.hamburger__line-1,
+.hamburger__line-2,
+.hamburger__line-3 {
+    border-top: 2px solid white;
+    margin-top: 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+.hamburger.is-showing .hamburger__line-1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.is-showing .hamburger__line-2 {
+    opacity: 0;
+}
+
+.hamburger.is-showing .hamburger__line-3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.hamburger {
+    cursor: pointer;
+    position: absolute;
+    z-index: 6;
+    top: 11px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+}
+
+@media only screen and (max-width: 576px) {
+    .navbar {
+        display: none;
+    }
+
+    .navbar-mobile {
+        display: block;
+    }
+}
+
+/* end navbar */
